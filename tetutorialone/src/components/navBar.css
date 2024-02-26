@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1{
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #da6a6a;
+}
+
+.nav-bar{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #888b8b;
+}
+
+.list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list li{
+   margin: auto;
+    padding: 20px;
+}
