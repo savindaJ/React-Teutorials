@@ -29,6 +29,9 @@ export default function BasicGrid() {
         <Grid xs={12} sm={6} md={3}>
           <Card name="Hewage"/>
         </Grid>
+        <Grid xs={12} sm={6} md={3}>
+          <Card name="Hewage"/>
+        </Grid>
       </Grid>
     </Box>
   );

@@ -1,11 +1,12 @@
 import './App.css';
 import React from 'react';
-import BasicGrid from './components/BasicGrid';
+import BasicDateCalendar from './components/BasicDateCalendar';
+
 
 function App() {
   return (
     <div className="App">
-      <BasicGrid />
+      <BasicDateCalendar />
     </div>
   );
 }
