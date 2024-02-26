@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [name, setName] = useState(0);
+
+  const [pharagraph, setPharagraph] = useState('');
+
+  function increment() {
+    setName(name+1);
+  }
+
+  function decrement() {
+    setName(name-1);
+  }
+
+  function handleInput(e) {
+    setPharagraph(e);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Increment and Decrement</h1>
+      <h1>{name}</h1>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <input type="text" onChange={(e) => handleInput(e.target.value)} />
+      <p>{pharagraph}</p>
     </div>
   );
 }
