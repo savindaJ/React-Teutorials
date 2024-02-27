@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import ButtonSection from './components/ButtonSection';
+import NavBar from './components/NavBar';
 
 function App() {
+
+  const[ count, setCount] = useState(0);
+
+  const[text,setText] = useState('');
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  function decrement() {
+    setCount(count - 1);
+  }
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  },[count]);
+
+  function set(text) {
+    setText(text);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar count={count} pass={text}/>
+      <ButtonSection increment={increment} decriment={decrement} set={(prop)=>{
+        set(prop);
+      }}/>
+      <h2 style={{textAlign:'center'}}>{text}</h2>
     </div>
   );
 }
